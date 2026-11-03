@@ -11,15 +11,15 @@ export async function submitApplication(
   _prev: ApplyState,
   formData: FormData,
 ): Promise<ApplyState> {
-  const name = String(formData.get("name") ?? "").trim();
-  const telegram = String(formData.get("telegram") ?? "").trim();
+  const firstName = String(formData.get("firstName") ?? "").trim();
+  const lastName = String(formData.get("lastName") ?? "").trim();
+  const email = String(formData.get("email") ?? "").trim();
 
-  if (!name || !telegram) {
-    return { status: "error", message: content.apply.error };
+  if (!firstName || !lastName || !email) {
+    return { status: "error", message: content.apply.fieldsError };
   }
 
-  // TODO: replace with real handler
-  console.log("[apply]", { name, telegram });
+  console.log("[apply]", { firstName, lastName, email });
 
   return { status: "success" };
 }

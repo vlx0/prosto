@@ -6,6 +6,8 @@ vendor
 *.log
 .env
 .env*.local
+data
+.api-hold
 .npmrc
 .DS_Store
 Thumbs.db
