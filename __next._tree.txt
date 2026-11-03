@@ -6,4 +6,4 @@
 :HL["/prosto/_next/static/media/b27a2cd9989897de-s.p.28de03t9-1qub.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/prosto/_next/static/media/daa29454a3e61cb2-s.p.25_z0nxfvnd9o.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 1:[["children",{"s":"__PAGE__","h":160}]]
-0:{"b":"iHpFWXdpbILF4Fbo0YkBf","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"Gj52bXabckOrkPenm1BaO","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
