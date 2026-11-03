@@ -1,31 +1,34 @@
 "use client";
 
-import { useActionState } from "react";
-import { submitApplication, type ApplyState } from "@/server/actions";
+import { useState, type FormEvent } from "react";
 import { Button } from "@/components/Button";
 import { content } from "@/content";
 
-const initialState: ApplyState = { status: "idle" };
-
 const fieldClass =
-  "w-full rounded-[20px] border border-sage/35 bg-field px-4 py-3.5 text-ink placeholder:text-muted/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+  "w-full rounded-[20px] border border-sage/35 bg-field px-4 py-3.5 text-base text-ink placeholder:text-muted/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
 
 export function ApplyForm() {
-  const [state, action, pending] = useActionState(
-    submitApplication,
-    initialState,
-  );
+  const [error, setError] = useState(false);
 
-  if (state.status === "success") {
-    return (
-      <p className="max-w-[40ch] font-serif text-2xl leading-snug text-ink md:text-3xl">
-        {content.apply.success}
-      </p>
-    );
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get("name") ?? "").trim();
+    const telegram = String(data.get("telegram") ?? "").trim();
+
+    if (!name || !telegram) {
+      setError(true);
+      return;
+    }
+
+    const text = content.apply.draft
+      .replace("{name}", name)
+      .replace("{telegram}", telegram);
+    window.location.href = `${content.footer.contactHref}?text=${encodeURIComponent(text)}`;
   }
 
   return (
-    <form action={action} className="flex w-full max-w-md flex-col gap-4">
+    <form onSubmit={onSubmit} className="flex w-full max-w-md flex-col gap-4">
       <label className="flex flex-col gap-2 text-sm text-muted">
         {content.apply.nameLabel}
         <input
@@ -50,14 +53,12 @@ export function ApplyForm() {
           className={fieldClass}
         />
       </label>
-      {state.status === "error" ? (
+      {error ? (
         <p className="text-sm text-accent" role="alert">
-          {state.message}
+          {content.apply.error}
         </p>
       ) : null}
-      <Button type="submit" disabled={pending}>
-        {pending ? content.apply.submitting : content.apply.submit}
-      </Button>
+      <Button type="submit">{content.apply.submit}</Button>
     </form>
   );
 }

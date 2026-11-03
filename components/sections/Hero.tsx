@@ -20,7 +20,7 @@ export function Hero() {
               {content.hero.sub}
             </p>
             <div className="mt-10">
-              <Button href={content.coursePage.href}>{content.hero.cta}</Button>
+              <Button href="#apply">{content.hero.cta}</Button>
             </div>
           </FadeIn>
           <FadeIn className="flex justify-center lg:col-span-5" delay={0.08}>

@@ -20,19 +20,7 @@ export const content = {
       { href: "#format", label: "Формат" },
       { href: "#faq", label: "Вопросы" },
       { href: "#apply", label: "Запись" },
-      { href: "/course", label: "Курс" },
     ],
-  },
-
-  coursePage: {
-    title: "Любовь к себе",
-    kicker: "Текст марафона",
-    href: "/course",
-    blocksLabel: "Блоки марафона",
-    startLabel: "Начало",
-    blockLabel: "Блок",
-    prev: "Предыдущий",
-    next: "Следующий",
   },
 
   hero: {
@@ -188,6 +176,7 @@ export const content = {
     submit: "Записаться на курс",
     submitting: "Отправляю…",
     success: "Спасибо. Я свяжусь с тобой в течение дня.",
+    draft: "Заявка на курс. Имя: {name}. Telegram: {telegram}.",
     error: "Напиши имя и Telegram. Без них заявка не уйдёт.",
   },
 

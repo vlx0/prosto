@@ -1,4 +1,4 @@
-import { Button } from "@/components/Button";
+import { ApplyForm } from "@/components/ApplyForm";
 import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import { content } from "@/content";
@@ -15,7 +15,7 @@ export function Apply() {
             {content.apply.promise}
           </p>
           <div className="mt-10">
-            <Button href={content.coursePage.href}>{content.apply.submit}</Button>
+            <ApplyForm />
           </div>
         </FadeIn>
       </Container>
