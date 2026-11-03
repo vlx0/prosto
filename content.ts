@@ -11,11 +11,9 @@ export const content = {
     brand: "Милена",
     themeToNight: "Включить ночь",
     themeToDay: "Включить день",
-    profile: { href: "#apply", label: "Профиль" },
-    items: [
-      { href: "#recognition", label: "Про тебя" },
-      { href: "#author", label: "Обо мне" },
-    ],
+    profile: { href: "#login", label: "Профиль" },
+    login: { href: "#login", label: "Вход" },
+    items: [{ href: "#author", label: "Обо мне" }],
   },
 
   hero: {
@@ -163,6 +161,8 @@ export const content = {
 
   apply: {
     heading: "Записаться на курс",
+    loginHeading: "Вход",
+    loginPromise: "Имя, фамилия и почта. Код придёт на почту.",
     close: "Закрыть",
     promise: "Ты не обязана становиться удобнее. Ты можешь начать выбирать себя.",
     firstNameLabel: "Имя",

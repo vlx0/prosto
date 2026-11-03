@@ -76,6 +76,12 @@ export function Hotbar() {
           >
             {content.nav.profile.label}
           </a>
+          <a
+            href={sitePath(`/${content.nav.login.href}`)}
+            className="shrink-0 whitespace-nowrap rounded-full px-1.5 py-1.5 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3"
+          >
+            {content.nav.login.label}
+          </a>
           <ThemeToggle />
         </div>
       </nav>

@@ -6,6 +6,7 @@ import { content } from "@/content";
 
 export function ApplyDialog() {
   const [open, setOpen] = useState(false);
+  const [login, setLogin] = useState(false);
   const titleId = useId();
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -19,8 +20,9 @@ export function ApplyDialog() {
       } catch {
         return;
       }
-      if (hash !== "#apply") return;
+      if (hash !== "#apply" && hash !== "#login") return;
       event.preventDefault();
+      setLogin(hash === "#login");
       setOpen(true);
     }
 
@@ -99,10 +101,10 @@ export function ApplyDialog() {
           id={titleId}
           className="pr-10 font-serif text-4xl leading-[1.15] tracking-wide text-ink"
         >
-          {content.apply.heading}
+          {login ? content.apply.loginHeading : content.apply.heading}
         </h2>
         <p className="mt-4 max-w-[36ch] text-lg leading-[1.7] text-muted">
-          {content.apply.promise}
+          {login ? content.apply.loginPromise : content.apply.promise}
         </p>
         <div className="mt-8">
           <ApplyForm />
