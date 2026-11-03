@@ -1,4 +1,4 @@
-:HL["/milena/_next/static/chunks/09iiai4c52_d0.css","style"]
+:HL["/prosto/_next/static/chunks/09iiai4c52_d0.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"WziGULjz3Pu9_mcms-PNF","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"eKq9LPLUtkuq-HBNDf5DS","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
