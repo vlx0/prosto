@@ -1,7 +1,4 @@
-"use client";
-
-import type { ReactNode } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import type { CSSProperties, ReactNode } from "react";
 
 type FadeInProps = {
   children: ReactNode;
@@ -10,21 +7,13 @@ type FadeInProps = {
 };
 
 export function FadeIn({ children, className = "", delay = 0 }: FadeInProps) {
-  const shouldReduce = useReducedMotion();
-
-  if (shouldReduce) {
-    return <div className={className}>{children}</div>;
-  }
+  const style: CSSProperties | undefined = delay
+    ? { animationDelay: `${delay}s` }
+    : undefined;
 
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.55, ease: "easeOut", delay }}
-    >
+    <div className={className ? `rise-in ${className}` : "rise-in"} style={style}>
       {children}
-    </motion.div>
+    </div>
   );
 }
