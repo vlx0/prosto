@@ -40,7 +40,7 @@ export function Hotbar() {
       >
         <a
           href={sitePath("/#start")}
-          className="whitespace-nowrap rounded-full px-2 py-1.5 font-serif text-lg leading-none text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3"
+          className="whitespace-nowrap rounded-full px-1.5 py-1.5 font-serif text-lg leading-none text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3"
         >
           {content.nav.brand}
         </a>
@@ -58,7 +58,7 @@ export function Hotbar() {
                 key={item.href}
                 href={href}
                 aria-current={current ? "true" : undefined}
-                className={`shrink-0 whitespace-nowrap rounded-full px-2 py-1.5 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3 ${
+                className={`shrink-0 whitespace-nowrap rounded-full px-1 py-1.5 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3 ${
                   current
                     ? "bg-accent/15 text-ink"
                     : "text-muted hover:text-ink"
@@ -72,7 +72,7 @@ export function Hotbar() {
         <div className="flex items-center">
           <a
             href={sitePath(`/${content.nav.profile.href}`)}
-            className="shrink-0 whitespace-nowrap rounded-full px-2 py-1.5 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3"
+            className="shrink-0 whitespace-nowrap rounded-full px-1.5 py-1.5 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3"
           >
             {content.nav.profile.label}
           </a>
