@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.turbo
+vendor
+*.log
+.env
+.env*.local
+.npmrc
+.DS_Store
+Thumbs.db

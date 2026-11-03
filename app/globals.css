@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #fdfbf7;
+  --ink: #2c241b;
+  --accent: #c97b63;
+  --sage: #8a9a7b;
+  --muted: #6b5e4e;
+  --card: #f8f4ee;
+  --field: #f7f3eb;
+  --on-accent: #fdfbf7;
+}
+
+html[data-theme="night"] {
+  --paper: #1c1612;
+  --ink: #f6efe6;
+  --accent: #d9927c;
+  --sage: #a8b89a;
+  --muted: #cbbba8;
+  --card: #2a221c;
+  --field: #241c17;
+  --on-accent: #fdfbf7;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-cream: var(--on-accent);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-accent: var(--accent);
+  --color-sage: var(--sage);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-field: var(--field);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-hand: var(--font-caveat), ui-serif, cursive;
+  --shadow-soft: 0 20px 40px -20px rgba(44, 36, 27, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+  color: var(--ink);
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-scroll {
+  scrollbar-width: none;
+}
+
+.nav-scroll::-webkit-scrollbar {
+  display: none;
+}

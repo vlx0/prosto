@@ -1,0 +1,58 @@
+---
+description: Design, tone, and conversion rules for the Self-Love course landing page
+alwaysApply: true
+---
+
+# Project: Landing page for a self-love course
+
+One-page site for a Russian-speaking female psychologist's authorial course on self-love. Audience: women 28–55, tired of being "convenient," skeptical of coaching-speak. They need to feel seen in the first three seconds and trust the author by the third scroll.
+
+The site's only job: turn a visitor into a course application.
+
+## Design language
+
+Emotional minimalism — warm, airy, tactile. Zero tech-startup, zero wellness cliché, zero stock-photo smiles.
+
+Palette (exact tokens, no substitutes):
+- Background: `#FDFBF7`
+- Primary text: `#2C241B`
+- Accent: `#C97B63`
+- Secondary: `#8A9A7B`
+- Muted text: `#6B5E4E`
+
+Typography:
+- Headings: Cormorant or Playfair Display, line-height 1.1–1.2
+- Body: Inter or Manrope, line-height 1.7, max 65–70ch
+- Handwritten Caveat at most twice (signature, one pull-quote). Never on buttons or body.
+
+Layout: section padding 96–160px desktop, 64–80px mobile. Cards 20–24px radius, buttons pill. Soft shadow `0 20px 40px -20px rgba(44,36,27,0.08)`. 2–3 low-opacity blur gradients. 12-col desktop, single column mobile.
+
+Motion (Framer Motion): sections fade + rise 20px, 0.5–0.6s ease-out. Button hover scale 1.02. No bounce, no text parallax.
+
+Accessibility: body contrast ≥ 4.5:1, visible focus rings, alt text on images.
+
+## Voice
+
+Warm, direct, adult. Short sentences. Concrete over abstract. Empathy over diagnosis. Never shame. First person for author, second person singular feminine ("ты") for the reader.
+
+Banned: "раскрой потенциал", unlock, transform, "измени жизнь навсегда", revolutionary, seamless, game-changing, "В современном мире…", "Более того"/"Кроме того"/"Стоит отметить" as openers, "Не секрет, что…", sentences > 25 words, three consecutive similar-length paragraphs, decorative em-dashes, exclamation marks in body, "Дорогие женщины"/"милые дамы".
+
+Required: specificity, honest questions sparingly, verbatim-feeling testimonials.
+
+Copy lives in `content.ts`. Do not hardcode Russian strings in components.
+
+## Page structure (exact order)
+
+1. Hero — H1 reframe, one CTA "Записаться на курс", abstract or real author photo (never stock woman).
+2. Recognition — "Это про тебя, если…", 3–4 scene cards, line-art icons.
+3. Author — photo, 2–3 first-person sentences, Caveat signature, one credentials line.
+4. Value — "Что изменится", 4–6 before/after cards, micro-CTA "Мне это откликается →".
+5. Testimonials — 2–3 specific quotes, first name + age or city, no stars.
+6. Format/price — honest inclusions; no fake old price, no countdown.
+7. FAQ — 4–5 real objections, 2–3 sentence answers.
+8. Final CTA — one promise, form name + email OR name + Telegram, success: "Спасибо. Я свяжусь с тобой в течение дня."
+9. Footer — name, one contact, copyright. No menus.
+
+## Technical
+
+Next.js App Router, TypeScript strict, Tailwind, Framer Motion, `next/font/google`. One component per file. Sections in `components/sections/`. Form via server action or route handler. No analytics unless asked. `next/image` for photos. CSS gradients only.
