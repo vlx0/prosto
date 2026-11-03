@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Caveat, Cormorant, Inter } from "next/font/google";
 import { content } from "@/content";
+import { ApplyDialog } from "@/components/ApplyDialog";
 import { Atmosphere } from "@/components/Atmosphere";
 import { Hotbar } from "@/components/Hotbar";
 import "./globals.css";
@@ -62,6 +63,7 @@ export default function RootLayout({
         <Atmosphere />
         <Hotbar />
         {children}
+        <ApplyDialog />
       </body>
     </html>
   );

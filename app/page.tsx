@@ -1,4 +1,3 @@
-import { Apply } from "@/components/sections/Apply";
 import { Author } from "@/components/sections/Author";
 import { Faq } from "@/components/sections/Faq";
 import { Footer } from "@/components/sections/Footer";
@@ -18,7 +17,6 @@ export default function HomePage() {
       <Testimonials />
       <Format />
       <Faq />
-      <Apply />
       <Footer />
     </main>
   );

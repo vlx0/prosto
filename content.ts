@@ -168,6 +168,7 @@ export const content = {
 
   apply: {
     heading: "Записаться на курс",
+    close: "Закрыть",
     promise: "Ты не обязана становиться удобнее. Ты можешь начать выбирать себя.",
     nameLabel: "Имя",
     namePlaceholder: "Как к тебе обращаться",
