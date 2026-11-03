@@ -36,7 +36,7 @@ export function Hotbar() {
     <header className="fixed inset-x-0 top-0 z-40 px-2 pt-3 sm:px-3 md:px-6">
       <nav
         aria-label={content.nav.label}
-        className="mx-auto grid w-full max-w-6xl grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-1 rounded-full border border-sage/30 bg-paper/85 px-1.5 py-1.5 shadow-soft backdrop-blur-md sm:gap-2 sm:px-2"
+        className="mx-auto flex w-fit max-w-full flex-nowrap items-center gap-1 rounded-full border border-sage/30 bg-paper/85 px-1.5 py-1.5 shadow-soft backdrop-blur-md sm:gap-2 sm:px-2"
       >
         <a
           href={sitePath("/#start")}
@@ -44,46 +44,40 @@ export function Hotbar() {
         >
           {content.nav.brand}
         </a>
-        <div className="nav-scroll flex min-w-0 flex-nowrap items-center gap-1 overflow-x-auto">
-          {content.nav.items.map((item) => {
-            const href = item.href.startsWith("#")
-              ? sitePath(`/${item.href}`)
-              : sitePath(item.href);
-            const here = pathname.replace(/\/$/, "") || "/";
-            const current = item.href.startsWith("#")
-              ? here === "/" && active === item.href
-              : here === item.href;
-            return (
-              <a
-                key={item.href}
-                href={href}
-                aria-current={current ? "true" : undefined}
-                className={`shrink-0 whitespace-nowrap rounded-full px-1 py-1.5 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3 ${
-                  current
-                    ? "bg-accent/15 text-ink"
-                    : "text-muted hover:text-ink"
-                }`}
-              >
-                {item.label}
-              </a>
-            );
-          })}
-        </div>
-        <div className="flex items-center">
-          <a
-            href={sitePath(`/${content.nav.profile.href}`)}
-            className="shrink-0 whitespace-nowrap rounded-full px-1.5 py-1.5 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3"
-          >
-            {content.nav.profile.label}
-          </a>
-          <a
-            href={sitePath(`/${content.nav.login.href}`)}
-            className="shrink-0 whitespace-nowrap rounded-full px-1.5 py-1.5 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3"
-          >
-            {content.nav.login.label}
-          </a>
-          <ThemeToggle />
-        </div>
+        {content.nav.items.map((item) => {
+          const href = item.href.startsWith("#")
+            ? sitePath(`/${item.href}`)
+            : sitePath(item.href);
+          const here = pathname.replace(/\/$/, "") || "/";
+          const current = item.href.startsWith("#")
+            ? here === "/" && active === item.href
+            : here === item.href;
+          return (
+            <a
+              key={item.href}
+              href={href}
+              aria-current={current ? "true" : undefined}
+              className={`shrink-0 whitespace-nowrap rounded-full px-1 py-1.5 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3 ${
+                current ? "bg-accent/15 text-ink" : "text-muted hover:text-ink"
+              }`}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+        <a
+          href={sitePath(`/${content.nav.profile.href}`)}
+          className="shrink-0 whitespace-nowrap rounded-full px-1.5 py-1.5 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3"
+        >
+          {content.nav.profile.label}
+        </a>
+        <a
+          href={sitePath(`/${content.nav.login.href}`)}
+          className="shrink-0 whitespace-nowrap rounded-full px-1.5 py-1.5 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3"
+        >
+          {content.nav.login.label}
+        </a>
+        <ThemeToggle />
       </nav>
     </header>
   );
