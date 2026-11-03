@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="start"
-      className="relative scroll-mt-28 px-0 pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-40 lg:pb-28"
+      className="relative scroll-mt-44 px-0 pt-44 pb-16 md:pb-24 lg:scroll-mt-28 lg:pt-40 lg:pb-28"
     >
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">

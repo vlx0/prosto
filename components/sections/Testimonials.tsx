@@ -6,7 +6,7 @@ const tilts = ["-rotate-[0.6deg]", "rotate-[0.8deg]", "-rotate-[0.4deg]"];
 
 export function Testimonials() {
   return (
-    <section id="stories" className="scroll-mt-28 py-16 md:py-24 lg:py-36">
+    <section id="stories" className="scroll-mt-44 lg:scroll-mt-28 py-16 md:py-24 lg:py-36">
       <Container>
         <FadeIn>
           <h2 className="font-serif text-4xl leading-[1.15] tracking-wide text-ink md:text-5xl">

@@ -4,7 +4,7 @@ import { content } from "@/content";
 
 export function Format() {
   return (
-    <section id="format" className="scroll-mt-28 py-16 md:py-24 lg:py-36">
+    <section id="format" className="scroll-mt-44 lg:scroll-mt-28 py-16 md:py-24 lg:py-36">
       <Container>
         <FadeIn>
           <h2 className="font-serif text-4xl leading-[1.15] tracking-wide text-ink md:text-5xl">
