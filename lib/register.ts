@@ -69,6 +69,11 @@ export function validName(value: string) {
   return name.length >= 1 && name.length <= 40 && !/[\r\n]/.test(name);
 }
 
+export async function findAccount(email: string) {
+  const store = await readStore();
+  return store.accounts.find((item) => item.email === email) ?? null;
+}
+
 export async function issueCode(input: {
   firstName: string;
   lastName: string;

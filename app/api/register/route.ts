@@ -1,6 +1,7 @@
 import {
   checkCode,
   dropPending,
+  findAccount,
   issueCode,
   normalizeEmail,
   validEmail,
@@ -27,6 +28,35 @@ export async function POST(request: Request) {
   const email = normalizeEmail(String(body.email ?? ""));
   if (!validEmail(email)) {
     return Response.json({ ok: false, error: "fields" }, { status: 400 });
+  }
+
+  if (body.step === "login") {
+    const account = await findAccount(email);
+    if (!account) {
+      return Response.json({ ok: false, error: "unknown" }, { status: 404 });
+    }
+
+    const issued = await issueCode({
+      firstName: account.firstName,
+      lastName: account.lastName,
+      email,
+    });
+    if (!issued.ok) {
+      return Response.json({ ok: false, error: issued.error }, { status: 429 });
+    }
+
+    try {
+      const mailed = await sendCodeMail(email, issued.code);
+      if (!mailed) {
+        await dropPending(email);
+        return Response.json({ ok: false, error: "mail" }, { status: 503 });
+      }
+    } catch {
+      await dropPending(email);
+      return Response.json({ ok: false, error: "mail" }, { status: 503 });
+    }
+
+    return Response.json({ ok: true });
   }
 
   if (body.step === "send") {

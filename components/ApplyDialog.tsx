@@ -7,6 +7,7 @@ import { content } from "@/content";
 export function ApplyDialog() {
   const [open, setOpen] = useState(false);
   const [login, setLogin] = useState(false);
+  const [registering, setRegistering] = useState(false);
   const titleId = useId();
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -23,6 +24,7 @@ export function ApplyDialog() {
       if (hash !== "#apply" && hash !== "#login") return;
       event.preventDefault();
       setLogin(hash === "#login");
+      setRegistering(false);
       setOpen(true);
     }
 
@@ -101,13 +103,25 @@ export function ApplyDialog() {
           id={titleId}
           className="pr-10 font-serif text-4xl leading-[1.15] tracking-wide text-ink"
         >
-          {login ? content.apply.loginHeading : content.apply.heading}
+          {login
+            ? registering
+              ? content.apply.registerHeading
+              : content.apply.loginHeading
+            : content.apply.heading}
         </h2>
         <p className="mt-4 max-w-[36ch] text-lg leading-[1.7] text-muted">
-          {login ? content.apply.loginPromise : content.apply.promise}
+          {login
+            ? registering
+              ? content.apply.registerPromise
+              : content.apply.loginPromise
+            : content.apply.promise}
         </p>
         <div className="mt-8">
-          <ApplyForm />
+          <ApplyForm
+            key={login ? "login" : "apply"}
+            variant={login ? "login" : "apply"}
+            onRegistering={setRegistering}
+          />
         </div>
       </div>
     </div>
