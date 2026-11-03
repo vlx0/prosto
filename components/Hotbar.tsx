@@ -36,7 +36,7 @@ export function Hotbar() {
     <header className="fixed inset-x-0 top-0 z-40 px-2 pt-3 sm:px-3 md:px-6">
       <nav
         aria-label={content.nav.label}
-        className="mx-auto grid w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-x-1 gap-y-1 rounded-[28px] border border-sage/30 bg-paper/85 px-1.5 py-1.5 shadow-soft backdrop-blur-md sm:px-2 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-2 lg:rounded-full"
+        className="mx-auto grid w-full max-w-6xl grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-1 rounded-full border border-sage/30 bg-paper/85 px-1.5 py-1.5 shadow-soft backdrop-blur-md sm:gap-2 sm:px-2"
       >
         <a
           href={sitePath("/#start")}
@@ -44,7 +44,7 @@ export function Hotbar() {
         >
           {content.nav.brand}
         </a>
-        <div className="nav-scroll col-span-2 row-start-2 flex min-w-0 flex-wrap items-center gap-x-1 gap-y-0.5 lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:flex-nowrap lg:overflow-x-auto">
+        <div className="nav-scroll flex min-w-0 flex-nowrap items-center gap-1 overflow-x-auto">
           {content.nav.items.map((item) => {
             const href = item.href.startsWith("#")
               ? sitePath(`/${item.href}`)
@@ -69,7 +69,7 @@ export function Hotbar() {
             );
           })}
         </div>
-        <div className="col-start-2 row-start-1 flex items-center lg:col-start-3">
+        <div className="flex items-center">
           <a
             href={sitePath(`/${content.nav.profile.href}`)}
             className="shrink-0 whitespace-nowrap rounded-full px-2 py-1.5 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-3"

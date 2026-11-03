@@ -5,7 +5,7 @@ import { content } from "@/content";
 
 export function Author() {
   return (
-    <section id="author" className="scroll-mt-44 lg:scroll-mt-28 py-16 md:py-24 lg:py-36">
+    <section id="author" className="scroll-mt-28 py-16 md:py-24 lg:py-36">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <FadeIn className="flex justify-center lg:col-span-5">

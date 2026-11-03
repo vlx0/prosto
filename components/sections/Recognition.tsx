@@ -9,7 +9,7 @@ export function Recognition() {
   return (
     <section
       id="recognition"
-      className="scroll-mt-44 lg:scroll-mt-28 py-16 md:py-24 lg:py-36"
+      className="scroll-mt-28 py-16 md:py-24 lg:py-36"
     >
       <Container>
         <FadeIn>

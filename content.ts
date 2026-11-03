@@ -15,10 +15,6 @@ export const content = {
     items: [
       { href: "#recognition", label: "Про тебя" },
       { href: "#author", label: "Обо мне" },
-      { href: "#outcomes", label: "Изменения" },
-      { href: "#stories", label: "Истории" },
-      { href: "#format", label: "Формат" },
-      { href: "#faq", label: "Вопросы" },
     ],
   },
 
