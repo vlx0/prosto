@@ -1,4 +1,4 @@
-:HL["/prosto/_next/static/chunks/35_sbaryy-eie.css","style"]
+:HL["/prosto/_next/static/chunks/2jrfo30h_6mht.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"UXN71W55GIUTsX04ExO3g","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"7ZL-2jRNjPeQuPswPZepB","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
