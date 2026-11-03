@@ -8,7 +8,7 @@ import { sitePath } from "@/lib/site-path";
 
 export function Hotbar() {
   const pathname = usePathname();
-  const [active, setActive] = useState<string>(content.nav.items[0].href);
+  const [active, setActive] = useState<string>("");
 
   useEffect(() => {
     const sections = content.nav.items
@@ -69,7 +69,15 @@ export function Hotbar() {
             );
           })}
         </div>
-        <ThemeToggle />
+        <div className="flex items-center">
+          <a
+            href={sitePath(`/${content.nav.profile.href}`)}
+            className="shrink-0 rounded-full px-3 py-1.5 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            {content.nav.profile.label}
+          </a>
+          <ThemeToggle />
+        </div>
       </nav>
     </header>
   );

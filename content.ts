@@ -11,15 +11,14 @@ export const content = {
     brand: "Милена",
     themeToNight: "Включить ночь",
     themeToDay: "Включить день",
+    profile: { href: "#apply", label: "Профиль" },
     items: [
-      { href: "#start", label: "Начало" },
       { href: "#recognition", label: "Про тебя" },
       { href: "#author", label: "Обо мне" },
       { href: "#outcomes", label: "Изменения" },
       { href: "#stories", label: "Истории" },
       { href: "#format", label: "Формат" },
       { href: "#faq", label: "Вопросы" },
-      { href: "#apply", label: "Запись" },
     ],
   },
 
